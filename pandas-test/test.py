@@ -14,3 +14,4 @@ df2 = pd.DataFrame({'A': 1.,
                     'F': 'foo'})
             
 print(df2)
+
