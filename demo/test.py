@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
 
-print('hello world')
-
 dates = pd.date_range('20130101', periods=6)
 print(dates)
 
