@@ -25,5 +25,7 @@ jupyter notebook
 
 ```
 
+
+
 > 参考
 > ![CentOS7安装jupyter](https://blog.csdn.net/iFan138/article/details/88424753)
