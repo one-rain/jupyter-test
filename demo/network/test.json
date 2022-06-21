@@ -1,0 +1,1469 @@
+{
+  "databases": [
+    {
+      "name": "bi_ods",
+      "type": "hive",
+      "tables": [
+        {
+          "name": "ods_xinai_gift_bag_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_gift_bag_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_gift_bag_rule_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_gift_bag_rule_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_gift_bag_user_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_gift_bag_user_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_gift_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_gift_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_lot_magic_box_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_lot_magic_box_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_prize_pool_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_prize_pool_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_user_ticket_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_user_ticket_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_user_ticket_history_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/activity/ods_xinai_user_ticket_history_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_member_pay_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/bb/ods_xinai_member_pay_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_membership_detail_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/bb/ods_xinai_membership_detail_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/bb/ods_xinai_order_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_user_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/bb/ods_xinai_user_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_iqiyi_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/coop/ods_iqiyi_order_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_iqiyi_user_map_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/coop/ods_xinai_iqiyi_user_map_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_match_qipu_map_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/coop/ods_xinai_match_qipu_map_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_league_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_league_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_league_type_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_league_type_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_mall_buy_success_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_mall_buy_success_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_mall_match_icon_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_mall_match_icon_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_mall_match_icon_live_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_mall_match_icon_live_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_mall_score_record_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_mall_score_record_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_mall_score_usable_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_mall_score_usable_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_mall_video_page_operation_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_mall_video_page_operation_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_match_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_match_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_proudct_match_rel_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/mysql/mall/ods_xinai_proudct_match_rel_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_iqiyi_project_class_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_iqiyi_project_class_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_album_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_album_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_article_connect_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_article_connect_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_article_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_article_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_season_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_season_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_special_program_content_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_special_program_content_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_special_res_content_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_special_res_content_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_special_res_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_special_res_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_sport_number_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_sport_number_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_sport_number_rel_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/postgres/content/ods_xinai_sport_number_rel_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_app_get_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/xinai/ods_xinai_app_get_hh.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_app_post_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/xinai/ods_xinai_app_post_hh.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_h5_get_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/xinai/ods_xinai_h5_get_hh.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_h5_post_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/xinai/ods_xinai_h5_post_hh.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_pc_get_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/xinai/ods_xinai_pc_get_hh.hql",
+          "dependents": []
+        },
+        {
+          "name": "ods_xinai_pc_post_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ods/xinai/ods_xinai_pc_post_hh.hql",
+          "dependents": []
+        }
+      ]
+    },
+    {
+      "name": "bi_dwd",
+      "type": "hive",
+      "tables": [
+        {
+          "name": "dwd_xinai_gift_bag_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_gift_bag_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_gift_bag_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_gift_bag_rule_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_gift_bag_rule_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_gift_bag_rule_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_gift_bag_user_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_gift_bag_user_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_gift_bag_user_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_gift_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_gift_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_gift_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_lot_magic_box_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_lot_magic_box_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_lot_magic_box_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_mall_score_record_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_mall_score_record_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_mall_score_record_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_mall_score_usable_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_mall_score_usable_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_mall_score_usable_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_prize_pool_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_prize_pool_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_prize_pool_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_user_ticket_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_user_ticket_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_user_ticket_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_user_ticket_history_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/activity/dwd_xinai_user_ticket_history_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_user_ticket_history_dd"
+          ]
+        },
+        {
+          "name": "dwd_tmp_xinai_app_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/behavior/dwd_tmp_xinai_app_event_hh.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_app_get_hh",
+            "bi_ods.ods_xinai_app_post_hh"
+          ]
+        },
+        {
+          "name": "dwd_tmp_xinai_h5_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/behavior/dwd_tmp_xinai_h5_event_hh.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_h5_get_hh",
+            "bi_ods.ods_xinai_h5_post_hh"
+          ]
+        },
+        {
+          "name": "dwd_tmp_xinai_pc_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/behavior/dwd_tmp_xinai_pc_event_hh.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_pc_get_hh",
+            "bi_ods.ods_xinai_pc_post_hh"
+          ]
+        },
+        {
+          "name": "dwd_xinai_app_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/behavior/dwd_xinai_app_event_hh.hql",
+          "dependents": [
+            "bi_dwd.dwd_tmp_xinai_app_event_hh"
+          ]
+        },
+        {
+          "name": "dwd_xinai_h5_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/behavior/dwd_xinai_h5_event_hh.hql",
+          "dependents": [
+            "bi_dwd.dwd_tmp_xinai_h5_event_hh"
+          ]
+        },
+        {
+          "name": "dwd_xinai_pc_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/behavior/dwd_xinai_pc_event_hh.hql",
+          "dependents": [
+            "bi_dwd.dwd_tmp_xinai_pc_event_hh"
+          ]
+        },
+        {
+          "name": "dwd_iqiyi_project_class_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_iqiyi_project_class_da.hql",
+          "dependents": [
+            "bi_ods.ods_iqiyi_project_class_da"
+          ]
+        },
+        {
+          "name": "dwd_iqiyi_project_class_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_iqiyi_project_class_valid_da.hql",
+          "dependents": [
+            "bi_ods.ods_iqiyi_project_class_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_album_article_rel_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_album_article_rel_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_album_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_album_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_album_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_album_info_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_album_info_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_album_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_article_connect_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_article_connect_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_article_connect_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_article_connect_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_article_connect_valid_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_article_connect_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_article_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_article_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_article_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_article_info_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_article_info_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_article_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_article_match_rel_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_article_match_rel_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_article_match_rel_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_article_match_rel_valid_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_mall_buy_success_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_mall_buy_success_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_mall_buy_success_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_mall_match_icon_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_mall_match_icon_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_mall_match_icon_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_mall_match_icon_live_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_mall_match_icon_live_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_mall_match_icon_live_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_mall_video_page_operation_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_mall_video_page_operation_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_mall_video_page_operation_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_special_program_content_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_special_program_content_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_special_program_content_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_special_res_content_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_special_res_content_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_special_res_content_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_special_res_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_special_res_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_special_res_da"
+          ]
+        },
+        {
+          "name": "dwd_xinai_sport_number_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_sport_number_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_sport_number_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_sport_number_rel_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_sport_number_rel_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_sport_number_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/content/dwd_xinai_sport_number_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_sport_number_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_match_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_match_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_match_info_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_info_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_match_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_match_league_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_league_da.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_match_qipu_map_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_qipu_map_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_match_qipu_map_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_qipu_map_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_match_qipu_map_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_match_round_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_round_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_match_round_info_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_round_info_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_match_round_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_match_rounds_stage_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_rounds_stage_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_match_season_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_season_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_season_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_match_season_info_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_match_season_info_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_match_season_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_proudct_match_rel_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/match/dwd_xinai_proudct_match_rel_da.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_proudct_match_rel_da"
+          ]
+        },
+        {
+          "name": "dwd_tmp_sport_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/tmp/dwd_tmp_sport_order_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_iqiyi_order_info_dd",
+            "bi_ods.ods_xinai_member_pay_dd",
+            "bi_ods.ods_xinai_order_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_tmp_sport_product_info_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/tmp/dwd_tmp_sport_product_info_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_proudct_match_rel_da"
+          ]
+        },
+        {
+          "name": "dwd_tmp_sport_user_renew_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/tmp/dwd_tmp_sport_user_renew_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_ott_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/tmp/dwd_xinai_ott_event_hh.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_iqiyi_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_iqiyi_order_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_iqiyi_order_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_sport_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_sport_order_info_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_tmp_sport_order_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_sport_product_info_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_sport_product_info_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_tmp_sport_product_info_da"
+          ]
+        },
+        {
+          "name": "dwd_sport_user_renew_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_sport_user_renew_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_tmp_sport_user_renew_dd"
+          ]
+        },
+        {
+          "name": "dwd_sport_user_rights_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_sport_user_rights_info_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwd_xinai_iqiyi_user_map_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_xinai_iqiyi_user_map_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_iqiyi_user_map_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_iqiyi_user_map_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_xinai_iqiyi_user_map_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_iqiyi_user_map_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_member_pay_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_xinai_member_pay_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_member_pay_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_xinai_order_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_order_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_user_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_xinai_user_info_dd.hql",
+          "dependents": [
+            "bi_ods.ods_xinai_user_info_dd"
+          ]
+        },
+        {
+          "name": "dwd_xinai_user_info_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwd/user/dwd_xinai_user_info_valid_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_user_info_dd"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bi_dwm",
+      "type": "hive",
+      "tables": [
+        {
+          "name": "dwm_xinai_ad_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/ad/dwm_xinai_ad_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_ad_device_attr_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_ad_show_click_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/ad/dwm_xinai_ad_show_click_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_ad_show_click_dd"
+          ]
+        },
+        {
+          "name": "dwm_sport_user_info_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base1/dwm_sport_user_info_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_iqiyi_user_map_valid_da",
+            "bi_dwd.dwd_xinai_user_info_valid_da"
+          ]
+        },
+        {
+          "name": "dwm_xinai_article_info_d2y",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base1/dwm_xinai_article_info_d2y.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_article_info_d2y"
+          ]
+        },
+        {
+          "name": "dwm_xinai_article_info_dm",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base1/dwm_xinai_article_info_dm.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_article_info_d2y"
+          ]
+        },
+        {
+          "name": "dwm_xinai_league_match_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base1/dwm_xinai_league_match_info_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_league_match_info_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_league_match_info_dy",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base1/dwm_xinai_league_match_info_dy.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_league_match_info_dd"
+          ]
+        },
+        {
+          "name": "dwm_sport_product_info_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base2/dwm_sport_product_info_da.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_sport_product_info_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_user_ticket_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/base2/dwm_xinai_user_ticket_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_user_ticket_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_all_device_info_d2y",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/device/dwm_xinai_all_device_info_d2y.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_app_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_h5_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_pc_device_attr_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/device/dwm_xinai_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_app_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_h5_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_ott_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_pc_device_attr_dd",
+            "bi_dwm.dwm_xinai_all_device_info_d2y"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_app_play_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/hour/dwm_tmp_xinai_app_play_event_hh.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_app_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_h5_play_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/hour/dwm_tmp_xinai_h5_play_event_hh.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_h5_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_pc_play_event_hh",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/hour/dwm_tmp_xinai_pc_play_event_hh.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_pc_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_xinai_live_event_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_live_event_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_live_event_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_live_play_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_live_play_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwm.dwm_xinai_live_event_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_live_status_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_live_status_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_live_status_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_live_status_dist5i_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_live_status_dist5i_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_live_status_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_video_event_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_video_event_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_video_event_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_video_play_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_video_play_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_video_event_dd",
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd"
+          ]
+        },
+        {
+          "name": "dwm_xinai_video_status_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/play/dwm_xinai_video_status_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_video_status_dd"
+          ]
+        },
+        {
+          "name": "dwm_tmp_sport_product_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_sport_product_info_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_league_match_info_dy",
+            "bi_dwd.dwd_sport_product_info_da"
+          ]
+        },
+        {
+          "name": "dwm_tmp_sport_user_league_order_his_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_sport_user_league_order_his_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_sport_product_info_da",
+            "bi_dwd.dwd_sport_order_info_dd"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_ad_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_ad_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_ad_show_click_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_ad_show_click_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_article_info_valid_da",
+            "bi_dwd.dwd_xinai_match_info_valid_da"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_app_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_app_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwd.dwd_xinai_app_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_article_info_d2y",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_article_info_d2y.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_league_match_info_dd",
+            "bi_dwm.dwm_xinai_league_match_info_dy",
+            "bi_dwd.dwd_iqiyi_project_class_valid_da",
+            "bi_dwd.dwd_xinai_album_article_rel_da",
+            "bi_dwd.dwd_xinai_album_info_valid_da",
+            "bi_dwd.dwd_xinai_article_connect_valid_da",
+            "bi_dwd.dwd_xinai_article_info_valid_da",
+            "bi_dwd.dwd_xinai_article_match_rel_valid_da",
+            "bi_dwd.dwd_xinai_sport_number_rel_da",
+            "bi_dwd.dwd_xinai_sport_number_valid_da"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_h5_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_h5_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwd.dwd_xinai_h5_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_ip_area_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_ip_area_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwm_tmp_xinai_league_match_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_league_match_info_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_match_info_dd",
+            "bi_dwd.dwd_xinai_match_league_da",
+            "bi_dwd.dwd_xinai_match_qipu_map_valid_da",
+            "bi_dwd.dwd_xinai_match_round_info_valid_da"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_live_event_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_live_event_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_app_play_event_hh",
+            "bi_dwm.dwm_tmp_xinai_h5_play_event_hh",
+            "bi_dwm.dwm_tmp_xinai_pc_play_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_live_status_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_live_status_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_live_play_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwm.dwm_xinai_live_event_dd"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_ott_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_ott_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_app_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwd.dwd_xinai_ott_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_pc_device_attr_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_pc_device_attr_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_h5_device_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwd.dwd_xinai_pc_event_hh"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_video_event_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_video_event_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_xinai_app_play_event_hh",
+            "bi_dwm.dwm_tmp_xinai_h5_play_event_hh",
+            "bi_dwm.dwm_tmp_xinai_pc_play_event_hh",
+            "bi_dwd.dwd_xinai_article_info_valid_da"
+          ]
+        },
+        {
+          "name": "dwm_tmp_xinai_video_status_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/tmp/dwm_tmp_xinai_video_status_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_video_play_attr_dd",
+            "bi_dwm.dwm_tmp_xinai_ip_area_dd",
+            "bi_dwm.dwm_xinai_video_event_dd"
+          ]
+        },
+        {
+          "name": "dwm_sport_diamond_new_user_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/user/dwm_sport_diamond_new_user_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "dwm_sport_order_renew_cnt_d2y",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/user/dwm_sport_order_renew_cnt_d2y.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_order_info_dd",
+            "bi_dwd.dwd_sport_user_renew_dd"
+          ]
+        },
+        {
+          "name": "dwm_sport_user_league_order_his_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/user/dwm_sport_user_league_order_his_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_tmp_sport_user_league_order_his_dd"
+          ]
+        },
+        {
+          "name": "dwm_sport_user_rights_final_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/user/dwm_sport_user_rights_final_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_user_rights_info_dd"
+          ]
+        },
+        {
+          "name": "dwm_sport_user_rights_his_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dwm/user/dwm_sport_user_rights_his_da.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_user_rights_info_dd"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bi_dws",
+      "type": "hive",
+      "tables": [
+        {
+          "name": "dws_sport_user_order_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/base/dws_sport_user_order_info_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_order_info_dd",
+            "bi_dwd.dwd_xinai_iqiyi_user_map_valid_da",
+            "bi_dwm.dwm_sport_product_info_da",
+            "bi_dwm.dwm_xinai_article_info_d2y",
+            "bi_dwm.dwm_xinai_league_match_info_dy"
+          ]
+        },
+        {
+          "name": "dws_sport_user_rights_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/base/dws_sport_user_rights_info_dd.hql",
+          "dependents": [
+            "bi_dws.dws_tmp_sport_user_rights_info_dd"
+          ]
+        },
+        {
+          "name": "dws_sport_user_rights_valid_da",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/base/dws_sport_user_rights_valid_da.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_rights_info_dd"
+          ]
+        },
+        {
+          "name": "dws_sport_device_video_detailed_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/play/dws_sport_device_video_detailed_dd.hql",
+          "dependents": [
+            "bi_dws.dws_tmp_sport_device_video_detailed_dd"
+          ]
+        },
+        {
+          "name": "dws_sport_user_live_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/play/dws_sport_user_live_info_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_league_match_info_dy"
+          ]
+        },
+        {
+          "name": "dws_xinai_live_status_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/play/dws_xinai_live_status_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_device_attr_dd",
+            "bi_dwm.dwm_xinai_live_status_dd"
+          ]
+        },
+        {
+          "name": "dws_xinai_live_status_dist5i_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/play/dws_xinai_live_status_dist5i_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_device_attr_dd",
+            "bi_dwm.dwm_xinai_live_status_dist5i_dd"
+          ]
+        },
+        {
+          "name": "dws_tmp_sport_device_video_detailed_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/tmp/dws_tmp_sport_device_video_detailed_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_article_info_d2y",
+            "bi_dwm.dwm_xinai_device_attr_dd",
+            "bi_dwm.dwm_xinai_video_status_dd"
+          ]
+        },
+        {
+          "name": "dws_tmp_sport_ticket_exchange_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/tmp/dws_tmp_sport_ticket_exchange_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_user_ticket_history_dd",
+            "bi_dwm.dwm_sport_product_info_da"
+          ]
+        },
+        {
+          "name": "dws_tmp_sport_user_rights_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/tmp/dws_tmp_sport_user_rights_info_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_order_info_dd",
+            "bi_dwd.dwd_sport_user_rights_info_dd",
+            "bi_dwd.dwd_xinai_iqiyi_user_map_valid_da",
+            "bi_dwm.dwm_sport_order_renew_cnt_d2y",
+            "bi_dwm.dwm_sport_product_info_da",
+            "bi_dwm.dwm_xinai_league_match_info_dy"
+          ]
+        },
+        {
+          "name": "dws_sport_ticket_exchange_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/user/dws_sport_ticket_exchange_dd.hql",
+          "dependents": [
+            "bi_dws.dws_tmp_sport_ticket_exchange_dd"
+          ]
+        },
+        {
+          "name": "dws_sport_user_league_exchange_his20_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/user/dws_sport_user_league_exchange_his20_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_ticket_exchange_dd"
+          ]
+        },
+        {
+          "name": "dws_sport_user_league_live_his_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/user/dws_sport_user_league_live_his_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_live_info_dd"
+          ]
+        },
+        {
+          "name": "dws_sport_user_tag_rights_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_dws/user/dws_sport_user_tag_rights_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_league_exchange_his20_dd",
+            "bi_dws.dws_sport_user_league_live_his_dd",
+            "bi_dws.dws_sport_user_rights_valid_da",
+            "bi_dwm.dwm_sport_user_rights_final_da",
+            "bi_dwm.dwm_xinai_user_ticket_da"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bi_ads",
+      "type": "hive",
+      "tables": [
+        {
+          "name": "ads_sport_mohe_collect_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/activity/ads_sport_mohe_collect_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_lot_magic_box_da"
+          ]
+        },
+        {
+          "name": "ads_sport_mohe_prize_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/activity/ads_sport_mohe_prize_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_lot_magic_box_da",
+            "bi_dwd.dwd_xinai_prize_pool_da"
+          ]
+        },
+        {
+          "name": "ads_sport_res_content_collect_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/activity/ads_sport_res_content_collect_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_mall_buy_success_da",
+            "bi_dwd.dwd_xinai_mall_match_icon_da",
+            "bi_dwd.dwd_xinai_mall_video_page_operation_da",
+            "bi_dwd.dwd_xinai_special_res_da"
+          ]
+        },
+        {
+          "name": "ads_xinai_kpi_content_edit_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/content/ads_xinai_kpi_content_edit_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ads_xinai_kpi_content_quality_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/content/ads_xinai_kpi_content_quality_dd.hql",
+          "dependents": []
+        },
+        {
+          "name": "ads_xinai_kpi_content_quality_mm",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/content/ads_xinai_kpi_content_quality_mm.hql",
+          "dependents": []
+        },
+        {
+          "name": "ads_xinai_kpi_content_quality_ww",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/content/ads_xinai_kpi_content_quality_ww.hql",
+          "dependents": []
+        },
+        {
+          "name": "ads_sport_league_product_income_dist_my",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/income/ads_sport_league_product_income_dist_my.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_order_info_dd",
+            "bi_dwm.dwm_sport_product_info_da",
+            "bi_dwm.dwm_xinai_league_match_info_dy"
+          ]
+        },
+        {
+          "name": "ads_sport_member_vv_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/play/ads_sport_member_vv_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_iqiyi_user_map_valid_da",
+            "bi_dwm.dwm_xinai_article_info_d2y",
+            "bi_dwm.dwm_xinai_league_match_info_dy",
+            "bi_dws.dws_sport_user_rights_valid_da"
+          ]
+        },
+        {
+          "name": "ads_sport_video_collect_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/play/ads_sport_video_collect_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_ad_show_click_dd",
+            "bi_dwm.dwm_xinai_article_info_d2y",
+            "bi_dws.dws_sport_device_video_detailed_dd"
+          ]
+        },
+        {
+          "name": "ads_xinai_live_match_play_stuck_dist_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/play/ads_xinai_live_match_play_stuck_dist_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_live_status_dd"
+          ]
+        },
+        {
+          "name": "ads_ad_user_product_info_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_ad_user_product_info_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_xinai_device_attr_dd",
+            "bi_dws.dws_sport_user_rights_info_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_membership_deadline_dist_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_membership_deadline_dist_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_rights_valid_da"
+          ]
+        },
+        {
+          "name": "ads_sport_membership_renew_churn_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_membership_renew_churn_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_tag_rights_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_nianbao_quanjitong_user_collect_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_nianbao_quanjitong_user_collect_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_sport_product_info_da",
+            "bi_dws.dws_sport_user_order_info_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_ticket_exchange_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_ticket_exchange_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_order_info_dd",
+            "bi_dwm.dwm_sport_product_info_da",
+            "bi_dws.dws_sport_ticket_exchange_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_user_bean_retain_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_user_bean_retain_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_mall_score_record_dd",
+            "bi_dwd.dwd_xinai_mall_score_usable_da"
+          ]
+        },
+        {
+          "name": "ads_sport_user_group_away_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_user_group_away_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_sport_user_league_order_his_dd",
+            "bi_dws.dws_sport_user_tag_rights_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_user_group_near_expire_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_user_group_near_expire_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_sport_user_league_order_his_dd",
+            "bi_dws.dws_sport_user_tag_rights_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_user_group_not_order_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_user_group_not_order_dd.hql",
+          "dependents": [
+            "bi_dwm.dwm_sport_user_info_da",
+            "bi_dwm.dwm_sport_user_league_order_his_dd",
+            "bi_dwm.dwm_sport_user_rights_his_da",
+            "bi_dws.dws_sport_user_league_live_his_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_user_group_retained_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_user_group_retained_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_tag_rights_dd"
+          ]
+        },
+        {
+          "name": "ads_sport_user_rights_retained_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_user_rights_retained_dd.hql",
+          "dependents": [
+            "bi_dws.dws_sport_user_rights_valid_da"
+          ]
+        },
+        {
+          "name": "ads_sport_yueka_new_user_retain_my",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/user/ads_sport_yueka_new_user_retain_my.hql",
+          "dependents": [
+            "bi_dwd.dwd_sport_order_info_dd",
+            "bi_dwm.dwm_sport_product_info_da"
+          ]
+        },
+        {
+          "name": "ads_sport_indicator_monitor_dd",
+          "suffix": ".hql",
+          "path": "/opt/apps/ssports-services/ssports-alien-dev/warehouse/hive/bi_ads/zone/ads_sport_indicator_monitor_dd.hql",
+          "dependents": [
+            "bi_dwd.dwd_xinai_h5_event_hh",
+            "bi_dwm.dwm_tmp_xinai_app_device_attr_dd",
+            "bi_dwm.dwm_xinai_device_attr_dd"
+          ]
+        }
+      ]
+    }
+  ]
+}
