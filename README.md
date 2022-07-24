@@ -19,7 +19,7 @@ jupyter notebook --generate-config
 vim ~/.jupyter/jupyter_notebook_config.py
 
 # 启动
-jupyter notebook
+jupyter-lab
 
 # 
 
