@@ -59,14 +59,31 @@ def read_xlsx1(path):
 def import_dict_page(path: str, sheet: str):
     df = pd.read_excel(path, sheet, keep_default_na=False)
     sql = '''
-          insert into dict_page(company, plat, page_code, page_name, page_type, start_version, remarks, wiki) 
-          values('xinying', 'app', '{}', '{}', '{}', '{}', '{}', '{}') 
-          on duplicate key update page_name='{}', page_type='{}', start_version='{}', remarks='{}', wiki='{}';
+          insert ignore into dict_page(company, plat, page_code, page_name, page_type, start_version, remarks, wiki) 
+          values('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}');
           '''
     # print(df.columns.values)
     # print(df.values)
     for idx, row in df.iterrows():
-        print(sql.format(row['page_code'], row['page_name'], row['page_type'], row['start_version'], row['remarks'], row['wiki'], row['page_name'], row['page_type'], row['start_version'], row['remarks'], row['wiki']))
+        company = None
+        if str.lower(row['company']) in ['xinying', 'iqiyi']:
+            company = row['company']
+        elif row['company'] == '独立站':
+            company = 'xinying'
+        elif row['company'] == '爱奇艺':
+            company = 'iqiyi'
+        else:
+            print('站点字段不合法')
+            break
+
+        plat = None
+        if str.lower(row['plat']) in ['app', 'pc', 'pcw', 'h5', 'ott', 'pad']:
+            plat = str.lower(row['plat'])
+        else:
+            print('终端字段不合法')
+            break
+
+        print(sql.format(company, plat, row['page_code'], row['page_name'], row['page_type'], row['start_version'], row['remarks'], row['wiki']))
 
 
 def import_dict_event(path: str, sheet: str):
@@ -80,5 +97,5 @@ def import_dict_event(path: str, sheet: str):
         print(sql.format(row['company'], row['plat'], row['event_code'], row['event_name'], row['event_type'], row['remarks']))
 
 
-# import_dict_page("C:\\Users\\Hello\\Downloads\\dict_page.xls", "Sheet1")
-import_dict_event("C:\\Users\\Hello\\Downloads\\app_event.xls", "all")
+import_dict_page("C:\\Users\\Hello\\Downloads\\dict_page_420.xls", "all")
+# import_dict_event("C:\\Users\\Hello\\Downloads\\dict_page_420.xls", "all")

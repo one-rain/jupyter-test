@@ -17,3 +17,11 @@ df2 = pd.DataFrame({
 print(df2)
 
 print(os.path.abspath('.'))
+
+print('居中打印'.center(50, '='))
+
+print('')
+print(format('居中打印', '=>50'))
+print(format('居右打印', '=^50'))
+print(format('居左打印', '=<50'))
+print('')
