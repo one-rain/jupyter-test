@@ -44,3 +44,11 @@ echo ""
 center_print echo不换行 20 =
 echo -n "这里的echo不换行，"
 echo "看看结果。"
+
+COLOR_ERROR="\e[38;5;198m"
+COLOR_NONE="\e[0m"
+COLOR_SUCC="\e[92m"
+
+echo "error: ${COLOR_ERROR}"
+echo "none: ${COLOR_NONE}"
+echo "succ: ${COLOR_SUCC}"

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="data bi service list">
+    <meta name="author" content="wangrun">
+    <meta name="generator" content="wangrun">
+    <title>Pie chart - D3</title>
+</head>
+
+<body>
+    <div style="text-align: center; padding-top: 2em;">
+        <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
+    </div>
+
+    <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
+    <script>
+        console.log("start load pie chart...");
+        var dataset = [66, 10, 9];
+        var svg = d3.select('svg');
+        var g = svg.append('g').attr('transform', 'translate(75, 75)');
+        var pie = d3.pie().value(v => { return v });
+        var colors = d3.scaleOrdinal(['#69C', '#FC9', '#9C6']);
+
+        // 鼠标移入饼图区域
+        var handleMouseOver = function (e, v) {
+            d3.select(this).attr('opacity', 1);
+
+            var pos = d3.pointer(e);
+            var x = pos[0] + 95;
+            var y = pos[1] + 75;
+            var tooltip = svg.append('g').attr('class', 'tooltip').attr('transform', 'translate(' + x + ',' + y + ')');
+            var text = tooltip.append('text').text(v.value).attr('text-anchor', 'middle');
+            var box = text.node().getBBox();
+
+            tooltip.insert('rect', 'text')
+                .attr('x', box.x)
+                .attr('y', box.y)
+                .attr('width', box.width)
+                .attr('height', box.height)
+                .attr('fill', 'white')
+                .attr('opacity', 0.7);
+        }
+
+        // 鼠标在饼图区域移动
+        var handleMouseMove = function (e) {
+            var pos = d3.pointer(e);
+            var x = pos[0] + 95;
+            var y = pos[1] + 75;
+
+            d3.select('.tooltip')
+                .attr('transform', 'translate(' + x + ',' + y + ')');
+        }
+
+        // 鼠标移出饼图区域
+        var handleMouseOut = function () {
+            d3.select(this).attr('opacity', 0.8);
+            d3.select('.tooltip').remove();
+        }
+
+        g.selectAll('path').data(pie(dataset)).enter()
+            .append('path')
+            .attr('d', d3.arc().innerRadius(0).outerRadius(70))
+            .attr('stroke', 'white')
+            .attr('stroke-width', 2)
+            .attr('fill', colors)
+            .attr('opacity', 0.8)
+            .on('mouseover', handleMouseOver) // 绑定鼠标移入事件处理方法
+            .on('mousemove', handleMouseMove) // 绑定鼠标移动事件处理方法
+            .on('mouseout', handleMouseOut); // 绑定鼠标移出事件处理方法
+
+        var legend = svg.append('g').attr('transform', 'translate(200, 50)');
+        legend.selectAll('rect').data(dataset).enter()
+            .append('circle')
+            .attr('r', 7)
+            .attr('cy', (v, i) => { return i * 20 + 5 })
+            .attr('fill', colors);
+
+        legend.selectAll('text').data(dataset).enter()
+            .append('text')
+            .text((v, i) => { return v })
+            .attr('x', 15)
+            .attr('y', (v, i) => { return i * 20 + 10 })
+            .attr('font-size', '0.8em');
+    </script>
+</body>
+
+</html>

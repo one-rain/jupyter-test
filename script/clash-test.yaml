@@ -1,0 +1,69 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+ipv6: true
+allow-lan: true
+external-ui: ui
+
+# Rule / Global / Direct (默认为 Rule 模式)
+mode: Rule
+
+# 设置输出日志的等级 (默认为 info)
+# info / warning / error / debug / silent
+log-level: info
+
+# RESTful API for clash
+external-controller: 0.0.0.0:9090
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - tcp://8.8.8.8:53
+    - udp://8.8.8.8:53
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 114.114.114.114
+  #enhanced-mode: redir-host
+  enhanced-mode: fake-ip #如果要玩netflix，需要使用fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 114.114.114.114
+    - 223.5.5.5
+  fallback:
+    - 114.114.114.114
+
+proxies:
+  - name: "aws-tokyo"
+    type: http
+    server: www.timiwo.com
+    port: 443
+    username: kiswo
+    password: "98766789QWEr"
+    tls: true
+    skip-cert-verify: true
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "aws-tokyo"
+
+# 规则
+Rule:
+# LAN
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+
+  - DOMAIN-SUFFIX,deepl.com,DIRECT
+
+# 最终规则（除了中国区的IP之外的，全部翻墙）
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY
