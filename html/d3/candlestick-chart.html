@@ -2,248 +2,248 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="data bi service list">
-    <meta name="author" content="wangrun">
-    <meta name="generator" content="wangrun">
-    <title>Candlestick chart - D3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="data bi service list">
+  <meta name="author" content="wangrun">
+  <meta name="generator" content="wangrun">
+  <title>Candlestick chart - D3</title>
 </head>
 
 <body>
-    <div style="text-align: center; padding-top: 2em;">
-        <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
-    </div>
+  <div style="text-align: center; padding-top: 2em;">
+    <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
+  </div>
 
-    <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
-    <script>
-        console.log("start load bar chart...");
-        const width = 1000;
-        const height = 500;
-        const margin = { top: 50, right: 30, bottom: 30, left: 80 }
+  <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
+  <script>
+    console.log("start load bar chart...");
+    const width = 1000;
+    const height = 500;
+    const margin = { top: 50, right: 30, bottom: 30, left: 80 }
 
-        const svg = d3.select('svg')
-            .attr('width', width)
-            .attr('height', height)
-            .attr('viewBox', [0, 0, width, height]);
+    const svg = d3.select('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', [0, 0, width, height]);
 
-        // 计算蜡烛图实线宽度
-        const getCandlestickWidth = dataLength => (width - margin.left - margin.right) / dataLength - 3;
+    // 计算蜡烛图实线宽度
+    const getCandlestickWidth = dataLength => (width - margin.left - margin.right) / dataLength - 3;
 
-        // 绘制标题
-        function drawTitle(value) {
-            const title = svg.append('text')
-                .text(value)
-                .attr('x', margin.left)
-                .attr('y', margin.top / 2)
-                .attr('text-anchor', 'start')
-                .attr('dominant-baseline', 'hanging');
-        }
+    // 绘制标题
+    function drawTitle(value) {
+      const title = svg.append('text')
+        .text(value)
+        .attr('x', margin.left)
+        .attr('y', margin.top / 2)
+        .attr('text-anchor', 'start')
+        .attr('dominant-baseline', 'hanging');
+    }
 
-        // 绘制横坐标
-        function drawAxisX(data) {
-            const dates = d3.map(data, v => v[0]);
+    // 绘制横坐标
+    function drawAxisX(data) {
+      const dates = d3.map(data, v => v[0]);
 
-            const scale = d3.scaleLinear()
-                .domain([0, data.length])
-                .range([0, width - margin.left - margin.right]);
+      const scale = d3.scaleLinear()
+        .domain([0, data.length])
+        .range([0, width - margin.left - margin.right]);
 
-            const axis = d3.axisBottom(scale)
-                .ticks(10)
-                .tickFormat(v => {
-                    return dates[v]
-                });
-
-            svg.append('g')
-                .attr('transform', 'translate(' + margin.left + ',' + (height - margin.bottom) + ')')
-                .call(axis);
-
-            return scale;
-        }
-
-        // 绘制竖标轴
-        function drawAxisY(data) {
-            // 找到最高价和最低价，用来作为蜡烛图的参照坐标
-            const highPrices = d3.map(data, v => v[3]);
-            const lowPrices = d3.map(data, v => v[4]);
-            const pricePending = Math.round(d3.max(highPrices) / 100);
-
-            // 绘制竖坐标
-            const scale = d3.scaleLinear()
-                .domain([d3.min(lowPrices) - pricePending, d3.max(highPrices) + pricePending])
-                .range([0, height - margin.top - margin.bottom]);
-
-            const axis = d3.axisLeft(scale).ticks(10);
-
-            svg.append('g')
-                .attr('transform', 'translate(' + (margin.left - 5) + ', ' + margin.top + ')')
-                .call(axis)
-                .call(g => g.select('.domain').remove())
-                .call(g => {
-                    g.selectAll('.tick line')
-                        .clone()
-                        .attr('stroke-opacity', 0.1)
-                        .attr('stroke-dasharray', 5)
-                        .attr('x2', width - margin.left - margin.right)
-                });
-
-            return scale;
-        }
-
-        // 获取数据并开始绘制
-        d3.json('./data1.json').then(data => {
-            const xScale = drawAxisX(data.data);
-            const yScale = drawAxisY(data.data);
-            drawCandlestick(data.data, xScale, yScale);
-            drawFocusLayout(data.data, xScale, yScale);
-            drawTitle(data.name);
+      const axis = d3.axisBottom(scale)
+        .ticks(10)
+        .tickFormat(v => {
+          return dates[v]
         });
 
-        function drawCandlestick(data, xScale, yScale) {
-            // 处理蜡烛图边框颜色
-            const handleStrokeColor = (v, i) => {
-                if (v[1] > v[2]) {
-                    return 'green';
-                }
+      svg.append('g')
+        .attr('transform', 'translate(' + margin.left + ',' + (height - margin.bottom) + ')')
+        .call(axis);
 
-                return 'red';
-            }
+      return scale;
+    }
 
-            // 计算蜡烛图实线宽度
-            const candlestickWidth = getCandlestickWidth(data.length);
+    // 绘制竖标轴
+    function drawAxisY(data) {
+      // 找到最高价和最低价，用来作为蜡烛图的参照坐标
+      const highPrices = d3.map(data, v => v[3]);
+      const lowPrices = d3.map(data, v => v[4]);
+      const pricePending = Math.round(d3.max(highPrices) / 100);
 
-            const g = svg.append('g')
-                .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+      // 绘制竖坐标
+      const scale = d3.scaleLinear()
+        .domain([d3.min(lowPrices) - pricePending, d3.max(highPrices) + pricePending])
+        .range([0, height - margin.top - margin.bottom]);
 
-            const candlestick = g.selectAll('g')
-                .data(data)
-                .enter()
-                .append('g');
+      const axis = d3.axisLeft(scale).ticks(10);
 
-            candlestick.append('line')
-                .attr('x1', (v, i) => {
-                    return xScale(i) + candlestickWidth / 2
-                })
-                .attr('y1', (v, i) => {
-                    return height - yScale(v[3]) - margin.top - margin.bottom;
-                })
-                .attr('x2', (v, i) => {
-                    return xScale(i) + candlestickWidth / 2;
-                })
-                .attr('y2', (v, i) => {
-                    return height - yScale(v[4]) - margin.top - margin.bottom;
-                })
-                .attr('stroke', handleStrokeColor)
-                .attr('stroke-width', 1);
+      svg.append('g')
+        .attr('transform', 'translate(' + (margin.left - 5) + ', ' + margin.top + ')')
+        .call(axis)
+        .call(g => g.select('.domain').remove())
+        .call(g => {
+          g.selectAll('.tick line')
+            .clone()
+            .attr('stroke-opacity', 0.1)
+            .attr('stroke-dasharray', 5)
+            .attr('x2', width - margin.left - margin.right)
+        });
 
-            // 绘制蜡烛图实线
-            candlestick.append('rect')
-                .attr('width', candlestickWidth)
-                .attr('height', (v, i) => {
-                    return Math.abs(yScale(v[1]) - yScale(v[2]));
-                })
-                .attr('x', (v, i) => {
-                    return xScale(i);
-                })
-                .attr('y', (v, i) => {
-                    return height - yScale(d3.max([v[1], v[2]])) - margin.top - margin.bottom;
-                })
-                .attr('rx', 1)
-                .attr('stroke', handleStrokeColor)
-                .attr('fill', (v, i) => {
-                    if (v[1] > v[2]) {
-                        return 'green';
-                    }
+      return scale;
+    }
 
-                    return 'white';
-                });
+    // 获取数据并开始绘制
+    d3.json('../../data/candlestick1.json').then(data => {
+      const xScale = drawAxisX(data.data);
+      const yScale = drawAxisY(data.data);
+      drawCandlestick(data.data, xScale, yScale);
+      drawFocusLayout(data.data, xScale, yScale);
+      drawTitle(data.name);
+    });
+
+    function drawCandlestick(data, xScale, yScale) {
+      // 处理蜡烛图边框颜色
+      const handleStrokeColor = (v, i) => {
+        if (v[1] > v[2]) {
+          return 'green';
         }
 
-        function drawFocusLayout(data, xScale, yScale) {
-            // 计算蜡烛图实线宽度
-            const candlestickWidth = getCandlestickWidth(data.length);
+        return 'red';
+      }
 
-            // 鼠标移入事件
-            const handleMouseOver = function (e) {
-                d3.select('#focusLineX').attr('display', '');
-                d3.select('#focusLineY').attr('display', '');
-            }
+      // 计算蜡烛图实线宽度
+      const candlestickWidth = getCandlestickWidth(data.length);
 
-            // 鼠标在图表中移动事件
-            const handleMouseMove = function (e) {
-                const [mx, my] = d3.pointer(e);
-                // 从鼠标当前的横向坐标位置反推出最相邻的 K 线坐标
-                const i = d3.bisectCenter(data.map((v, i) => i), xScale.invert(mx-margin.left));
-                const px = xScale(i) + margin.left + candlestickWidth/2;
-                const py = height - yScale(data[i][2]) - margin.bottom;
+      const g = svg.append('g')
+        .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
-                d3.select('#focusLineX').attr('x1', px).attr('x2', px);
-                d3.select('#focusLineY').attr('y1', py).attr('y2', py);
+      const candlestick = g.selectAll('g')
+        .data(data)
+        .enter()
+        .append('g');
 
-                text.text(formatText(data[i]));
-            }
+      candlestick.append('line')
+        .attr('x1', (v, i) => {
+          return xScale(i) + candlestickWidth / 2
+        })
+        .attr('y1', (v, i) => {
+          return height - yScale(v[3]) - margin.top - margin.bottom;
+        })
+        .attr('x2', (v, i) => {
+          return xScale(i) + candlestickWidth / 2;
+        })
+        .attr('y2', (v, i) => {
+          return height - yScale(v[4]) - margin.top - margin.bottom;
+        })
+        .attr('stroke', handleStrokeColor)
+        .attr('stroke-width', 1);
 
-            // 鼠标移出事件
-            const handleMouseOut = function (e) {
-                d3.select('#focusLineX').attr('display', 'none');
-                d3.select('#focusLineY').attr('display', 'none');
-                text.text(formatText(data[data.length-1]));
-            }
+      // 绘制蜡烛图实线
+      candlestick.append('rect')
+        .attr('width', candlestickWidth)
+        .attr('height', (v, i) => {
+          return Math.abs(yScale(v[1]) - yScale(v[2]));
+        })
+        .attr('x', (v, i) => {
+          return xScale(i);
+        })
+        .attr('y', (v, i) => {
+          return height - yScale(d3.max([v[1], v[2]])) - margin.top - margin.bottom;
+        })
+        .attr('rx', 1)
+        .attr('stroke', handleStrokeColor)
+        .attr('fill', (v, i) => {
+          if (v[1] > v[2]) {
+            return 'green';
+          }
 
-            const formatText = (v) => {
-                return `${v[0].replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
+          return 'white';
+        });
+    }
+
+    function drawFocusLayout(data, xScale, yScale) {
+      // 计算蜡烛图实线宽度
+      const candlestickWidth = getCandlestickWidth(data.length);
+
+      // 鼠标移入事件
+      const handleMouseOver = function (e) {
+        d3.select('#focusLineX').attr('display', '');
+        d3.select('#focusLineY').attr('display', '');
+      }
+
+      // 鼠标在图表中移动事件
+      const handleMouseMove = function (e) {
+        const [mx, my] = d3.pointer(e);
+        // 从鼠标当前的横向坐标位置反推出最相邻的 K 线坐标
+        const i = d3.bisectCenter(data.map((v, i) => i), xScale.invert(mx - margin.left));
+        const px = xScale(i) + margin.left + candlestickWidth / 2;
+        const py = height - yScale(data[i][2]) - margin.bottom;
+
+        d3.select('#focusLineX').attr('x1', px).attr('x2', px);
+        d3.select('#focusLineY').attr('y1', py).attr('y2', py);
+
+        text.text(formatText(data[i]));
+      }
+
+      // 鼠标移出事件
+      const handleMouseOut = function (e) {
+        d3.select('#focusLineX').attr('display', 'none');
+        d3.select('#focusLineY').attr('display', 'none');
+        text.text(formatText(data[data.length - 1]));
+      }
+
+      const formatText = (v) => {
+        return `${v[0].replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
                     涨跌幅: ${v[6]}% |
                     开盘: ${v[1]} |
                     收盘: ${v[2]} |
                     最高: ${v[3]} |
                     最低: ${v[4]}`;
-            }
+      }
 
-            // 绘制数据提示信息
-            const text = svg.append('text')
-                .attr('x', width-margin.right)
-                .attr('y', margin.top/2)
-                .attr('font-size', '0.85em')
-                .attr('fill', '#666')
-                .attr('text-anchor', 'end')
-                .attr('dominant-baseline', 'hanging')
-                .text(formatText(data[data.length-1]));
+      // 绘制数据提示信息
+      const text = svg.append('text')
+        .attr('x', width - margin.right)
+        .attr('y', margin.top / 2)
+        .attr('font-size', '0.85em')
+        .attr('fill', '#666')
+        .attr('text-anchor', 'end')
+        .attr('dominant-baseline', 'hanging')
+        .text(formatText(data[data.length - 1]));
 
-            // 绘制标识线
-            svg.append('line')
-                .attr('id', 'focusLineX')
-                .attr('x1', margin.left)
-                .attr('y1', margin.top)
-                .attr('x2', margin.left)
-                .attr('y2', height-margin.bottom)
-                .attr('stroke', 'steelblue')
-                .attr('stroke-width', 1)
-                .attr('opacity', 0.5)
-                .attr('display', 'none');
+      // 绘制标识线
+      svg.append('line')
+        .attr('id', 'focusLineX')
+        .attr('x1', margin.left)
+        .attr('y1', margin.top)
+        .attr('x2', margin.left)
+        .attr('y2', height - margin.bottom)
+        .attr('stroke', 'steelblue')
+        .attr('stroke-width', 1)
+        .attr('opacity', 0.5)
+        .attr('display', 'none');
 
-            svg.append('line')
-                .attr('id', 'focusLineY')
-                .attr('x1', margin.left)
-                .attr('y1', margin.top)
-                .attr('x2', width-margin.right)
-                .attr('y2', margin.top)
-                .attr('stroke', 'steelblue')
-                .attr('stroke-width', 1)
-                .attr('opacity', 0.5)
-                .attr('display', 'none');
+      svg.append('line')
+        .attr('id', 'focusLineY')
+        .attr('x1', margin.left)
+        .attr('y1', margin.top)
+        .attr('x2', width - margin.right)
+        .attr('y2', margin.top)
+        .attr('stroke', 'steelblue')
+        .attr('stroke-width', 1)
+        .attr('opacity', 0.5)
+        .attr('display', 'none');
 
-            // 绘制鼠标事件触发区域
-            svg.append('rect')
-                .attr('x', margin.left)
-                .attr('y', margin.top)
-                .attr('width', width-margin.left-margin.right)
-                .attr('height', height-margin.top-margin.bottom)
-                .attr('opacity', 0)
-                .on('mouseover', handleMouseOver)
-                .on('mousemove', handleMouseMove)
-                .on('mouseout', handleMouseOut);
-        }
-    </script>
+      // 绘制鼠标事件触发区域
+      svg.append('rect')
+        .attr('x', margin.left)
+        .attr('y', margin.top)
+        .attr('width', width - margin.left - margin.right)
+        .attr('height', height - margin.top - margin.bottom)
+        .attr('opacity', 0)
+        .on('mouseover', handleMouseOver)
+        .on('mousemove', handleMouseMove)
+        .on('mouseout', handleMouseOut);
+    }
+  </script>
 </body>
 
 </html>

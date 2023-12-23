@@ -2,61 +2,61 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="data bi service list">
-    <meta name="author" content="wangrun">
-    <meta name="generator" content="wangrun">
-    <title>Bar chart - D3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="data bi service list">
+  <meta name="author" content="wangrun">
+  <meta name="generator" content="wangrun">
+  <title>Bar chart - D3</title>
 </head>
 
 <body>
-    <div style="text-align: center; padding-top: 2em;">
-        <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
-    </div>
-    
-    <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
-    <script>
-        console.log("start load bar chart...");
-        var dataset = [180, 80, 100, 300, 500, 150];
-        var barHeight = 150/dataset.length;
-        var barLength = d3.scaleLinear()
-            .domain([0, d3.max(dataset)])
-            .range([0, 260]);
-        var barX = d3.scaleLinear()
-            .domain([0, dataset.length])
-            .range([0, 125]);
-        var svg = d3.select('svg');
-        var g = svg.append('g')
-            .attr('transform', 'translate(20, 20)');
+  <div style="text-align: center; padding-top: 2em;">
+    <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
+  </div>
 
-        g.selectAll('rect').data(dataset).enter()
-            .append('rect')
-            .attr('height', barHeight-5)
-            .attr('width', barLength)
-            .attr('x', 0)
-            .attr('y', (v, i) => { return barX(i) })
-            .attr('fill', 'blue');
+  <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
+  <script>
+    console.log("start load bar chart...");
+    var dataset = [180, 80, 100, 300, 500, 150];
+    var barHeight = 150 / dataset.length;
+    var barLength = d3.scaleLinear()
+      .domain([0, d3.max(dataset)])
+      .range([0, 260]);
+    var barX = d3.scaleLinear()
+      .domain([0, dataset.length])
+      .range([0, 125]);
+    var svg = d3.select('svg');
+    var g = svg.append('g')
+      .attr('transform', 'translate(20, 20)');
 
-        g.selectAll('text').data(dataset).enter()
-            .append('text')
-            .text(v => { return v })
-            .attr('x', v => { return barLength(v)-5 })
-            .attr('y', (v, i) => { return barX(i)+barHeight/1.6})
-            .attr('fill', 'white')
-            .attr('font-size', '0.85em')
-            .attr('text-anchor', 'end');
+    g.selectAll('rect').data(dataset).enter()
+      .append('rect')
+      .attr('height', barHeight - 5)
+      .attr('width', barLength)
+      .attr('x', 0)
+      .attr('y', (v, i) => { return barX(i) })
+      .attr('fill', 'blue');
 
-        svg.append('g')
-            .attr('transform', 'translate(20, 20)')
-            .call(d3.axisTop(barLength));
+    g.selectAll('text').data(dataset).enter()
+      .append('text')
+      .text(v => { return v })
+      .attr('x', v => { return barLength(v) - 5 })
+      .attr('y', (v, i) => { return barX(i) + barHeight / 1.6 })
+      .attr('fill', 'white')
+      .attr('font-size', '0.85em')
+      .attr('text-anchor', 'end');
 
-        var labelScale = d3.scaleBand().range([0, 125]).domain(dataset.keys());
+    svg.append('g')
+      .attr('transform', 'translate(20, 20)')
+      .call(d3.axisTop(barLength));
 
-        svg.append('g')
-            .attr('transform', 'translate(20, 20)')
-            .call(d3.axisLeft(labelScale));
-    </script>
+    var labelScale = d3.scaleBand().range([0, 125]).domain(dataset.keys());
+
+    svg.append('g')
+      .attr('transform', 'translate(20, 20)')
+      .call(d3.axisLeft(labelScale));
+  </script>
 </body>
 
 </html>

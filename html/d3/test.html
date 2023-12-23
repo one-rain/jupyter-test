@@ -2,33 +2,33 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="data bi service list">
-    <meta name="author" content="wangrun">
-    <meta name="generator" content="wangrun">
-    <title>D3 - Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="data bi service list">
+  <meta name="author" content="wangrun">
+  <meta name="generator" content="wangrun">
+  <title>D3 - Demo</title>
 </head>
 
 <body>
-    <div style="text-align: center; padding-top: 2em;">
-        <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
-    </div>
-    <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
-    <script charset="utf-8">
-        console.log("start load pie chart...");
-        var dataset = [66, 10, 9];
+  <div style="text-align: center; padding-top: 2em;">
+    <svg style="box-shadow:0 0 0.5em rgba(0, 0, 0, 0.2)"></svg>
+  </div>
+  <script src="../../static/js/d3/7.8.5/d3.v7.min.js"></script>
+  <script charset="utf-8">
+    console.log("start load pie chart...");
+    var dataset = [66, 10, 9];
 
-        var svg = d3.select('svg');
-        var g = svg.append('g').attr('transform', 'translate(75, 75)');
-        var pie = d3.pie().value(v => { return v });
+    var svg = d3.select('svg');
+    var g = svg.append('g').attr('transform', 'translate(75, 75)');
+    var pie = d3.pie().value(v => { return v });
 
-        g.selectAll('path').data(pie(dataset)).enter()
-            .append('path')
-            .attr('d', d3.arc().innerRadius(0).outerRadius(70))
-            .attr('stroke', 'white')
-            .attr('stroke-width', 2);
-    </script>
+    g.selectAll('path').data(pie(dataset)).enter()
+      .append('path')
+      .attr('d', d3.arc().innerRadius(0).outerRadius(70))
+      .attr('stroke', 'white')
+      .attr('stroke-width', 2);
+  </script>
 </body>
 
 </html>
