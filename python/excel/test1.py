@@ -66,12 +66,12 @@ def import_dict_page(path: str, sheet: str):
     # print(df.values)
     for idx, row in df.iterrows():
         company = None
-        if str.lower(row['company']) in ['xinying', 'iqiyi']:
+        if str.lower(row['company']) in ['onw', 'two']:
             company = row['company']
-        elif row['company'] == '独立站':
-            company = 'xinying'
-        elif row['company'] == '爱奇艺':
-            company = 'iqiyi'
+        elif row['company'] == '一':
+            company = 'one'
+        elif row['company'] == '二':
+            company = 'two'
         else:
             print('站点字段不合法')
             break
@@ -97,5 +97,4 @@ def import_dict_event(path: str, sheet: str):
         print(sql.format(row['company'], row['plat'], row['event_code'], row['event_name'], row['event_type'], row['remarks']))
 
 
-import_dict_page("C:\\Users\\Hello\\Downloads\\dict_page_420.xls", "all")
-# import_dict_event("C:\\Users\\Hello\\Downloads\\dict_page_420.xls", "all")
+import_dict_page("~/data/dict_page_420.xls", "all")

@@ -4,7 +4,7 @@ import pandas as pd
 
 
 def parse_excle(path: str, sheet: str):
-    file_path = "/tmp/iqiyi_tv_channel.txt"
+    file_path = "/tmp/tv_channel.txt"
     fo = open(file_path, 'w', encoding='utf8')
 
     df = pd.read_excel(path, sheet, keep_default_na=False)
@@ -17,4 +17,4 @@ def parse_excle(path: str, sheet: str):
     fo.close
 
 
-parse_excle("/mnt/d/新英/数据需求/奇异果渠道UUID2023.xlsx", "202106")
+parse_excle("~/data/UUID2023.xlsx", "202106")
