@@ -97,4 +97,20 @@ def import_dict_event(path: str, sheet: str):
         print(sql.format(row['company'], row['plat'], row['event_code'], row['event_name'], row['event_type'], row['remarks']))
 
 
+def parse_excle(path: str, sheet: str):
+    file_path = "/tmp/tv_channel.txt"
+    fo = open(file_path, 'w', encoding='utf8')
+
+    df = pd.read_excel(path, sheet, keep_default_na=False)
+    line = '{}\t{}\t{}\t2023-07-23\n'
+    for idx, row in df.iterrows():
+        s = line.format(row['UUID'], row['厂商'], row['型号'])
+        print(s)
+        fo.write(s)
+
+    fo.close
+
+
+parse_excle("~/data/UUID2023.xlsx", "202106")
+
 import_dict_page("~/data/dict_page_420.xls", "all")
