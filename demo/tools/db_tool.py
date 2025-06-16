@@ -9,7 +9,7 @@ def mysql_connect():
     return pymysql.connect(
         host = 'localhost',
         user = 'dev',
-        password = 'Dotw@2024',
+        password = 'MswG@2024',
         database = 'test',
         charset = 'utf8mb4'
     )
