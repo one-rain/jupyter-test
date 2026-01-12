@@ -1,0 +1,139 @@
+meta:
+  project: 尚界荆州门店75秒消费者体验视频
+  total_duration_sec: 75
+  target_audience: 15-20万年轻车主
+  style:
+    - 双主角故事线
+    - 地域人文沉浸
+    - 沉浸式服务体验
+    - 家庭温情
+    - 精英效率
+    - 高端汽车品牌广告
+
+video:
+  resolution: 1920x1080
+  fps: 24
+  aspect_ratio: 16:9
+  tone: warm_cinematic
+
+global_prompt:
+  positive: >
+    cinematic commercial film, realistic lighting, warm emotional storytelling,
+    high-end automotive advertisement, smooth camera movement, ultra realistic
+  negative: >
+    low quality, blurry, jitter, cartoon, anime, watermark, distortion
+
+scenes:
+  - id: 1
+    title: 开篇·码头烟火引主线
+    duration_sec: 8
+    prompt:
+      positive: >
+        dusk at Shashi ferry terminal in Jingzhou, family of three walking hand in hand,
+        warm river breeze, street food atmosphere, child holding local snack,
+        cinematic sunset glow, split screen with young professional woman by the river,
+        Yangtze river bridge night lights reflecting on water
+      negative: crowded chaos, messy background
+    camera: handheld follow, close-up, split screen
+    transition: water ripple dissolve
+
+  - id: 2
+    title: 城市快剪·昼夜衔接
+    duration_sec: 7
+    prompt:
+      positive: >
+        Jingzhou city montage, ferry lights at night, Yangtze river bridge traffic,
+        ancient city wall in morning mist, modern car showroom exterior in morning light,
+        cinematic fast cut
+      negative: dark exposure
+    camera: drone fly-through, fast cut
+    transition: day-night match cut
+
+  - id: 3
+    title: 主线A·一家三口到店体验
+    duration_sec: 10
+    prompt:
+      positive: >
+        family entering modern car showroom, professional sales consultant greeting,
+        spacious showroom interior, father lifting child happily,
+        mother taking photos with smartphone,
+        elegant female professional customer nearby listening to car explanation,
+        premium service atmosphere
+      negative: stiff pose, awkward smile
+    camera: POV + third-person, medium shot
+    transition: eye-line match
+
+  - id: 4
+    title: 双线并行·试驾服务
+    duration_sec: 10
+    prompt:
+      positive: >
+        young professional woman test driving modern electric car through city streets,
+        smooth steering, intelligent cockpit display, voice assistant interaction,
+        parallel scenes of family relaxing in showroom cafe area,
+        warm and calm atmosphere
+      negative: excessive motion blur
+    camera: dynamic driving + static interior
+    transition: parallel montage
+
+  - id: 5
+    title: 服务闭环·售后轻描
+    duration_sec: 5
+    prompt:
+      positive: >
+        modern automotive service workshop, skilled technicians inspecting vehicle,
+        clean tools, efficient workflow, test drive car returning to showroom
+      negative: dirty workshop
+    camera: lateral drone pan
+    transition: seamless glide
+
+  - id: 6
+    title: 交付仪式高光
+    duration_sec: 10
+    prompt:
+      positive: >
+        car delivery ceremony inside showroom, brand new car with red ribbon and flowers,
+        customer receiving car key, celebratory confetti,
+        warm golden lighting, emotional highlight
+      negative: overexposed highlights
+    camera: one-take drone, slow motion
+    transition: cinematic hold
+
+  - id: 7
+    title: 主线A·洽谈与休闲
+    duration_sec: 10
+    prompt:
+      positive: >
+        family discussing car purchase in private meeting room,
+        digital contract displayed on tablet,
+        child touching screen curiously,
+        later relaxing in lounge area with snacks,
+        city view outside window, cozy atmosphere
+      negative: cold lighting
+    camera: close-up + wide shot
+    transition: soft fade
+
+  - id: 8
+    title: 收尾·提车离场
+    duration_sec: 8
+    prompt:
+      positive: >
+        family driving new car out of showroom,
+        child waving through window,
+        staff smiling and seeing them off,
+        car merging into Jingzhou city traffic,
+        Yangtze river bridge background
+      negative: traffic chaos
+    camera: vehicle follow shot
+    transition: match cut
+
+  - id: 9
+    title: 品牌定格
+    duration_sec: 7
+    prompt:
+      positive: >
+        dark background fading into premium automotive brand logo,
+        elegant typography, cinematic ending frame
+      negative: busy background
+    camera: static
+    transition: fade to black

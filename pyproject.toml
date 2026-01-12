@@ -1,0 +1,45 @@
+[project]
+name = "jupyter-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyterlab>=4.5.1",
+    "matplotlib>=3.10.8",
+    "nbformat>=5.10.4",
+    "numpy>=2.4.1",
+    "pandas>=2.3.3",
+    "plotly>=6.5.1",
+    "pydantic>=2.12.5",
+    "pyhive>=0.7.0",
+    "pymysql>=1.1.2",
+    "xlrd>=2.0.2",
+]
+
+[project.optional-dependencies]
+dev = ["mypy>=1.11.1", "ruff>=0.6.1"]
+
+[build-system]
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ipykernel>=7.1.0",
+    "uv>=0.9.24",
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+pythonpath = [
+    "src"
+]

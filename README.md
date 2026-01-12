@@ -19,9 +19,17 @@ jupyter notebook --generate-config
 # 修改配置文件
 vim ~/.jupyter/jupyter_notebook_config.py
 
+# 修改密码
+jupyter notebook password
+
 # 启动
+```bash
+# 普通环境的启动
 jupyter-lab
 
+# 基于uv的启动
+uv run --with jupyter jupyter lab
+```
 # 
 
 ```

@@ -9,12 +9,12 @@
 .idea/
 
 
-.vscode/
 .env
+.venv/
 
+.jupyter-runtime/
+*/.ipynb_checkpoints/
 .ipynb_checkpoints/
 
 _pycache_/
 *.pyc
-
-*/.ipynb_checkpoints/
