@@ -27,6 +27,18 @@ scenes:
   - id: 1
     title: 开篇·码头烟火引主线
     duration_sec: 8
+
+    assets:
+      - type: image
+        path: ./assets/shashi_dock_dusk.jpg
+        usage: reference
+        weight: 0.4
+
+      - type: video
+        path: ./assets/yangtze_bridge_night.mp4
+        usage: reference
+        weight: 0.3
+
     prompt:
       positive: >
         dusk at Shashi ferry terminal in Jingzhou, family of three walking hand in hand,
