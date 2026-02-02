@@ -258,18 +258,6 @@ def test_process_data(item: ExcelModel):
     print("\n\n")
 
 
-def excel_to_csv():
-    """
-    将excel中社媒直播数据转换为csv文件
-    """
-    matched_sheets = read_social_midia_excel("~/Downloads/10000002_20260123145802.xlsx")
-    #test_process_data(matched_sheets[0])
-
-    for item in matched_sheets:
-        if item.key == "douyin":
-            process_douyin_data(item)
-
-
 def process_douyin_data(item: ExcelModel):
     """
     处理抖音数据，将excel中数据转成hive数仓中的观众数据表
@@ -327,6 +315,18 @@ def process_douyin_data(item: ExcelModel):
     )
 
 
+def excel_to_csv():
+    """
+    将excel中社媒直播数据转换为csv文件
+    """
+    matched_sheets = read_social_midia_excel("~/Downloads/10000002_20260123145802.xlsx")
+    #test_process_data(matched_sheets[0])
+
+    for item in matched_sheets:
+        if item.key == "douyin":
+            process_douyin_data(item)
+
+
 def get_match_result(row: pd.Series) -> tuple[str, int]:
     """
     匹配赛事id，生成row_id与match_id的映射关系
@@ -338,26 +338,29 @@ def get_match_result(row: pd.Series) -> tuple[str, int]:
     if "回顾" in row[1] or "回放" in row[1] or "录播" in row[1] or '录像' in row[10]:
         league_name = row[2].replace("回放", "").replace("回顾", "").replace("录播", "").replace("录像", "").replace("首播", "")
         # 将row[2] 中的 8-7 正则替换为 vs
-        query = f"在{row[3]} 回放的 {league_name} {row[2].replace(r'\d-\d', r' VS ')}，对应的赛事ID是多少？"
-    elif "节目" in row[1] or "日报" in row[1] or "情报" in row[1]:
+        query = f"在{row[3]} 回放的 {league_name.replace(r'\d-\d', r'VS')}，对应的赛事ID是多少？"
+    elif "节目" in row[1] or "日报" in row[1] or "情报" in row[1] or "抽签仪式" in row[2] or "发布会" in row[2]:
         query = ""
     else:
         league_name = row[1].replace("其他", "")
         query = f"在{row[3]}直播的 {league_name} {row[2]}，对应的赛事ID是多少？"
 
-    print(query)
+    query = query.replace("vs", "VS").replace("RB", "")
     if query:
         matched_result = query_match_info(query)
+        #matched_result = []
         match_id = matched_result[0].get("match_id", 0) if matched_result and len(matched_result) > 0 else 0
     else:
         match_id = 0
 
+    print(f"query: {query} ----> id: {id}, match_id: {match_id}")
     return id, match_id
 
 def match_match_info():
     """
     匹配赛事id，生成row_id与match_id的映射关系
     """
+    data_files = ["douyin_116.txt"]
     for data_file in data_files:
         df = pd.read_csv(
             f"{current_dir}/assets/data/social_midia/{data_file}",
@@ -372,7 +375,8 @@ def match_match_info():
         # 遍历每一行数据，获取row_id和match_id
         for index, row in df.iterrows():
             id, match_id = get_match_result(row)
-            matched_ids.append(f"{id}\t{match_id}")
+            line = f"douyin\t{id}\t{match_id}"
+            matched_ids.append(line)
 
         # 将matched_ids写入文本文件
         with open(
@@ -388,18 +392,11 @@ def rematch_match_id():
     重新匹配赛事id，生成row_id与match_id的映射关系
 
     """
-    data_files = ["old_matched_id_114.txt"]
+    data_files = ["matched_id_103.txt"]
     # 读取文本文件
     for data_file in data_files:
-        df = pd.read_csv(
-            f"{current_dir}/assets/data/social_midia/{data_file}",
-            sep="\t",
-            header=None,
-            dtype=str,
-            encoding="utf-8"
-        )
+        sheet_index = data_file.split("_")[2].replace(".txt", "")
 
-        sheet_index = data_file.split("_")[-1].replace(".txt", "")
         origin_df = pd.read_csv(
             f"{current_dir}/assets/data/social_midia/douyin_{sheet_index}.txt",
             sep="\t",
@@ -408,36 +405,46 @@ def rematch_match_id():
             encoding="utf-8"
         )
 
+        df = pd.read_csv(
+            f"{current_dir}/assets/data/social_midia/{data_file}",
+            sep="\t",
+            header=None,
+            dtype=str,
+            encoding="utf-8"
+        )
+
         for index, row in df.iterrows():
-            match_id = row[1]
+            print("-"*50)
+            #row_num = row[1]
+            match_id = row[2]
             # 获取第2列的值，判断是否等于0，如果等于0，重新匹配
             if match_id == "0":
                 print(f"第{index}行，match_id为0，需要重新匹配")
-                # 获取origin_df中id等于row[0]的行
-                origin_row = origin_df[origin_df[0] == row[0]]
+                # 获取origin_df中id等于df中第1列的值的行
+                origin_row = origin_df[origin_df[0] == row[1]]
                 if origin_row.empty:
-                    print(f"第{index}行，id为{row[0]}，在origin_df中不存在")
+                    print(f"第{index}行，id为{row[1]}，在origin_df中不存在")
                     continue
+
                 id, match_id = get_match_result(origin_row.iloc[0])
-                print(f"第{index}行，id为{id}，match_id为{match_id}")
-                df.iloc[index, 1] = match_id
+                print(f"第{index}行，id为{id}，match_id重新匹配结果为{match_id}")
+                df.iloc[index, 2] = match_id
 
         # 将df写入文本文件
         df.to_csv(
-            f"{current_dir}/assets/data/social_midia/new_{data_file}",
+            f"{current_dir}/assets/data/social_midia/{data_file}",
             sep="\t",
             index=False,
             header=False,
             encoding="utf-8"
         )
 
+
 if __name__ == '__main__':
     #excel_to_csv()
     print("="*50)
 
-    data_files = ["douyin_103.txt", "douyin_114.txt", "douyin_115.txt", "douyin_116.txt"]
     # 匹配赛事id
-    #match_match_id()
+    match_match_info()
     # 重新匹配赛事id
-    rematch_match_id()
-
+    #rematch_match_id()
