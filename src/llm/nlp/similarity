@@ -1,0 +1,41 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
+
+
+class KeywordSimilarityMatcher:
+
+    def __init__(self, keywords):
+
+        self.vectorizer = TfidfVectorizer(
+            analyzer="char",
+            ngram_range=(2, 3)
+        )
+        # keywords去重
+        self.keywords = list(set(keywords))
+        # 对keywords进行向量化
+        self.keyword_vecs = self.vectorizer.fit_transform(self.keywords)
+
+    def match(self, question):
+        q_vec = self.vectorizer.transform([question])
+        # 计算余弦相似度
+        sims = cosine_similarity(q_vec, self.keyword_vecs)[0]
+
+        results = []
+        for idx, score in enumerate(sims):
+            results.append((self.keywords[idx], float(score)))
+
+        # 按相似度降序排序
+        results.sort(key=lambda x: x[1], reverse=True)
+        return results
+
+
+if __name__ == "__main__":
+    keywords = ["英超", "英格兰超级联赛"]
+    matcher = KeywordSimilarityMatcher(keywords)
+
+    question = "在2025-09-06 20:23:00直播的 女子英超 第1轮：阿森纳VS伦敦城雌狮，对应的赛事ID是多少？"
+    results = matcher.match(question)
+    print(f"问题: {question}")
+    for keyword, score in results:
+        print(f"关键词: {keyword}, 相似度: {score:.4f}")

@@ -13,44 +13,6 @@ from tools.http_tool import query_match_info
 p = Path(__file__).resolve()
 current_dir = p.parents[2]
 
-DOUYIN_FIELD_MAPPING = {
-    "season": {"title": "直播类目", "type": str},
-    "match_name": {"title": "直播名称", "type": str},
-    "match_start_time": {"title": "开播时间", "type": str},
-    "match_duration": {"title": "时长（分钟）", "type": int},
-    "pay_type": {"title": "付免策略", "type": str},
-    "price": {"title": "定价（元）", "type": float},
-    "sales_quantity": {"title": "售卖数量", "type": int},
-    "ticket_flow": {"title": "门票流水", "type": int},
-    "ticket_income": {"title": "门票收入", "type": float},
-    "live_mode": {"title": "直播方式", "type": str},
-    "exposure_count": {"title": "曝光数据（万）_曝光次数", "type": int},
-    "exposure_people": {"title": "曝光数据（万）_曝光人数", "type": int},
-    "watch_people": {"title": "观众数据_累计观众数", "type": int},
-    "watch_count": {"title": "观众数据_累计观看次数", "type": int},
-    "peak_online_people": {"title": "观众数据_在线人数峰值", "type": int},
-    "avg_watch_people": {"title": "观众数据_平均在线人数（万）", "type": float},
-    "avg_play_time": {"title": "观众数据_人均观看时长（分钟）", "type": float},
-    "new_followers": {"title": "互动数据_新增关注数", "type": int},
-    "comment_people": {"title": "互动数据_评论人数", "type": int},
-    "comment_count": {"title": "互动数据_评论数", "type": int},
-    "share_count": {"title": "互动数据_分享数", "type": int},
-    "like_count": {"title": "互动数据_点赞数", "type": int},
-    "reward_count": {"title": "互动数据_打赏次数", "type": int},
-    "gift_total": {"title": "互动数据_礼物总额", "type": float},
-    "interaction_count": {"title": "互动数据_互动总数", "type": int},
-    "exposure_watch_rate": {"title": "曝光-观看率", "type": float},
-    "watch_interaction_rate": {"title": "观看-互动率", "type": float},
-    "exposure_ticket_rate": {"title": "曝光-购票率", "type": float},
-    "watch_ticket_rate": {"title": "观看-购票率", "type": float},
-    "watch_sales_rate": {"title": "观看-成交率", "type": float},
-    "watch_product_exposure_rate": {"title": "观看-商品曝光率", "type": float},
-    "product_exposure_click_rate": {"title": "商品曝光-点击率", "type": float},
-    "product_click_sales_rate": {"title": "商品点击-成交率", "type": float},
-    "sales_count": {"title": "成交单数", "type": int},
-    "sales_income": {"title": "成交金额+礼物收入", "type": float},
-    "note": {"title": "备注", "type": str},
-}
 
 # 排除的关键词
 EXCLUDED_KEY_WORD = ["日报", "其他", "节目", "抽签仪式"]
@@ -315,6 +277,108 @@ def process_douyin_data(item: ExcelModel):
     )
 
 
+def process_wechat_data(item: ExcelModel):
+    """
+        处理视频号数据，将excel中数据转成hive数仓中的观众数据表
+        1. 不要表头
+        2. 每列之间用制表符隔开
+        3. NaN值或其它特殊符号用空字符串替换
+        4. 将处理后的数据写入文本文件
+
+        Args:
+            item (ExcelModel): 包含抖音数据的ExcelModel对象
+    """
+    df = item.df
+    # 第一列为合并列时，统一处理成上一行的值
+    df.iloc[:, 0] = df.iloc[:, 0].ffill()
+
+    # 第一列中有换行符的，根据换行符分割，并取第一个元素作为第一列值
+    df.iloc[:, 0] = df.iloc[:, 0].apply(lambda x: x.split('\n')[0] if isinstance(x, str) else x)
+
+    for col in df.columns:
+        l0, l1 = col
+        # NaN 值统一转为空字符串
+        df[col] = df[col].fillna("")
+        # "/" 替换为空字符串
+        df[col] = df[col].replace("/", "", regex=False)
+
+        # 数值单位统一，将“万”单位转换成“个”整数
+        if "（万）" in l0:
+            df[col] = pd.to_numeric(df[col], errors="coerce").mul(10000).round(0).astype("Int64").astype(str).replace("<NA>", "")
+
+    # 过滤第2列或第3列为空的行
+    mask = (df.iloc[:, 1] == "") | (df.iloc[:, 2] == "")
+    if mask.any():
+        print("删除第2列或第3列为空的行：")
+        df = df[~mask]
+
+    df2 = df.copy()
+    # 插入到第0列
+    df2.insert(0, "id", f"{item.sheet_index}_" + (df2.index + 1000).astype(str))
+
+    df2.to_csv(
+        f"{current_dir}/assets/data/social_midia/{item.key}_{item.sheet_index}.txt",
+        sep="\t",
+        index=False,
+        header=False,
+        encoding="utf-8"
+    )
+
+
+def process_xiaohongshu_data(item: ExcelModel):
+    """
+        处理小红书数据，将excel中数据转成hive数仓中的观众数据表
+        1. 不要表头
+        2. 每列之间用制表符隔开
+        3. NaN值或其它特殊符号用空字符串替换
+        4. 将处理后的数据写入文本文件
+
+        Args:
+            item (ExcelModel): 包含抖音数据的ExcelModel对象
+    """
+    df = item.df
+    # 第一列为合并列时，统一处理成上一行的值
+    df.iloc[:, 0] = df.iloc[:, 0].ffill()
+
+    # 第一列中有换行符的，根据换行符分割，并取第一个元素作为第一列值
+    df.iloc[:, 0] = df.iloc[:, 0].apply(lambda x: x.split('\n')[0] if isinstance(x, str) else x)
+
+    # 其它 NaN 统一转为空字符串
+    #df_audience = item.df.fillna("")
+
+    for col in df.columns:
+        l0, l1 = col
+        # NaN 值统一转为空字符串
+        df[col] = df[col].fillna("")
+        # "/" 替换为空字符串
+        df[col] = df[col].replace("/", "", regex=False)
+
+
+    # 过滤第2列或第3列为空的行
+    mask = (df.iloc[:, 1] == "") | (df.iloc[:, 2] == "")
+    if mask.any():
+        print("删除第2列或第3列为空的行：")
+        #print(df[mask])
+        df = df[~mask]
+
+    # 处理列值为 "/" 的情况
+    #obj_cols = df_audience.select_dtypes(include="object").columns
+    #df_audience[obj_cols] = df_audience[obj_cols].replace("/", "", regex=False)
+
+    # 新增id字段，并输出到第一列。id生成规则：sheet_index_ + (index + 1000)
+    df2 = df.copy()
+    # 插入到第0列
+    df2.insert(0, "id", f"{item.sheet_index}_" + (df2.index + 1000).astype(str))
+
+    df2.to_csv(
+        f"{current_dir}/assets/data/social_midia/{item.key}_{item.sheet_index}.txt",
+        sep="\t",
+        index=False,
+        header=False,
+        encoding="utf-8"
+    )
+
+
 def excel_to_csv():
     """
     将excel中社媒直播数据转换为csv文件
@@ -325,6 +389,12 @@ def excel_to_csv():
     for item in matched_sheets:
         if item.key == "douyin":
             process_douyin_data(item)
+        elif item.key == "wechat":
+            process_wechat_data(item)
+        elif item.key == "xiaohongshu":
+            process_xiaohongshu_data(item)
+        else:
+            print(f"未处理的sheet_index: {item.sheet_index}")
 
 
 def get_match_result(row: pd.Series) -> tuple[str, int]:
@@ -360,7 +430,7 @@ def match_match_info():
     """
     匹配赛事id，生成row_id与match_id的映射关系
     """
-    data_files = ["douyin_116.txt"]
+    data_files = ["xiaohongshu_110.txt"]
     for data_file in data_files:
         df = pd.read_csv(
             f"{current_dir}/assets/data/social_midia/{data_file}",
@@ -369,18 +439,20 @@ def match_match_info():
             dtype=str,
             encoding="utf-8"
         )
-        sheet_index = data_file.split("_")[1].replace(".txt", "")
+        name_parts = data_file.split("_")
+        tag = name_parts[0]
+        sheet_index = name_parts[1].replace(".txt", "")
         matched_ids = []
 
         # 遍历每一行数据，获取row_id和match_id
         for index, row in df.iterrows():
             id, match_id = get_match_result(row)
-            line = f"douyin\t{id}\t{match_id}"
+            line = f"{tag}\t{id}\t{match_id}"
             matched_ids.append(line)
 
         # 将matched_ids写入文本文件
         with open(
-              f"{current_dir}/assets/data/social_midia/matched_id_{sheet_index}.txt",
+              f"{current_dir}/assets/data/social_midia/{tag}_matched_id_{sheet_index}.txt",
               "w",
               encoding="utf-8"
           ) as f:
@@ -440,6 +512,31 @@ def rematch_match_id():
         )
 
 
+def rematch_match_with_index(tag: str, id: str):
+    """
+    重新匹配赛事id，生成row_id与match_id的映射关系
+
+    """
+    id_parts = id.split("_")
+    sheet_index = id_parts[0]
+    row_num = id_parts[1]
+    # 读取文本文件
+    df = pd.read_csv(
+        f"{current_dir}/assets/data/social_midia/{tag}_{sheet_index}.txt",
+        sep="\t",
+        header=None,
+        dtype=str,
+        encoding="utf-8"
+    )
+
+    # 获取指定行数据
+    for index, row in df.iterrows():
+        if row[0] == id:
+            id, match_id = get_match_result(row)
+            print(f"第{index}行，id为{id}，match_id重新匹配结果为{match_id}")
+            break
+
+
 if __name__ == '__main__':
     #excel_to_csv()
     print("="*50)
@@ -448,3 +545,4 @@ if __name__ == '__main__':
     match_match_info()
     # 重新匹配赛事id
     #rematch_match_id()
+    #rematch_match_with_index("douyin", "114_1305")
